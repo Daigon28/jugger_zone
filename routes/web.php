@@ -17,4 +17,4 @@ Route::get('/events/{event}', [EventController::class, 'event']);
 // post-put (actualizar)
 // post-patch (actualizar)
 // post-delete (eliminar)
-// popo
+// popo (editado por baxter)
