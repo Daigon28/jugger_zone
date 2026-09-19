@@ -13,7 +13,7 @@
                 </button>
             </div>
             <nav :class="{'flex': open, 'hidden': !open}" class="flex-col flex-grow hidden pb-4 md:pb-0 md:flex md:justify-end md:flex-row">
-                <a class="{{ $button1 }}" href="./events">Eventos</a>
+                <a class="{{ $button1 }}" href="/events">Eventos</a>
                 <a class="{{ $button1 }}" href="#">Portfolio</a>
                 <a class="{{ $button1 }}" href="#">About</a>
                 <a class="{{ $button1 }}" href="#">Contact</a>
