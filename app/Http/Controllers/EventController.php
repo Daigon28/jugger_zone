@@ -36,8 +36,6 @@ class EventController extends Controller
     }
 
     public function update($event, Request $request){ // update info7 evento
-        // dd($request);
-        // exit;
         $event = Event::find($event);
 
         $event->title       = $request->title;
@@ -47,8 +45,14 @@ class EventController extends Controller
         
         return redirect('/events');
     }
+    
+    public function destroy($event){ // update info7 evento
+        $event = Event::find($event);
+        $event->delete();
+        return redirect('/events');
+    }
 
-    public function event($event){ // mostrar evento
+    public function show($event){ // mostrar evento
         $event = Event::find($event);
         return view('events.event',[
             'event' => $event

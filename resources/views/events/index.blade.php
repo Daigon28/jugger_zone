@@ -22,9 +22,11 @@
                     </a>
                 </td>
                 <td>
-                    <a href="/events/{{ $event->id }}/delete"> 
-                        Eliminar
-                    </a>
+                    <form action="/events/delete/{{ $event->id }}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit"> Eliminar </button>
+                    </form>
                 </td>
             </tr>
         @endforeach
