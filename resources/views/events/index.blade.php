@@ -2,7 +2,7 @@
 
     <x-slot name="title"> JuggerZone [Eventos] </x-slot>
 
-    <a href="/events/create"> Crear evento </a>
+    <a href="{{ route('event.create') }}"> Crear evento </a>
 
     <br>
     <br>
@@ -12,20 +12,20 @@
         @foreach ($events as $event)
             <tr>
                 <td>
-                    <a href="/events/{{ $event->id }}"> 
+                    <a href="{{ route('event.show', $event) }}"> 
                         {{ $event->title }}
                     </a>
                 </td>
-                <td>
-                    <a href="/events/{{ $event->id }}/edit"> 
+                <td> 
+                    <a href="{{ route('event.edit', $event) }}"> 
                         Editar
                     </a>
                 </td>
                 <td>
-                    <form action="/events/delete/{{ $event->id }}" method="POST">
-                    @csrf
-                    @method('DELETE')
-                    <button type="submit"> Eliminar </button>
+                    <form action="{{ route('event.destroy', $event) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit"> Eliminar </button>
                     </form>
                 </td>
             </tr>

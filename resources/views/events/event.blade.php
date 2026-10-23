@@ -8,7 +8,7 @@
     <br>
     <br>
 
-    Mirando evento {{ $event->title }}
+    Mirando evento: {{ $event->title }}
     <p> {{ $event->description }} </p>
     <p>fecha: {{ $event->created_at->format('d/m/Y') }}</p>
     <p>actualizado: {{ $event->updated_at->format('d/m/Y') }}</p>

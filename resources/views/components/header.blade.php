@@ -13,8 +13,8 @@
                 </button>
             </div>
             <nav :class="{'flex': open, 'hidden': !open}" class="flex-col flex-grow hidden pb-4 md:pb-0 md:flex md:justify-end md:flex-row">
-                <a class="{{ $button1 }}" href="/events">Eventos</a>
-                <a class="{{ $button1 }}" href="#">Portfolio</a>
+                <a class="{{ $button1 }}" href="{{ route('event.index') }}">Eventos</a>
+                <a class="{{ $button1 }}" href="{{ route('team.index') }}">Equipos</a>
                 <a class="{{ $button1 }}" href="#">About</a>
                 <a class="{{ $button1 }}" href="#">Contact</a>
                 <div @click.away="open = false" class="relative" x-data="{ open: true }">

@@ -28,4 +28,8 @@ class Event extends Model
             }
         );
     }
+
+    public function getRouteKeyName(){
+        return "slug";
+    }
 }

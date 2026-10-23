@@ -3,18 +3,24 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\TeamController;
 use App\Models\Event;
 
 Route::get('/', HomeController::class);
 
-Route::get('/events', [EventController::class, 'index']);
-Route::get('/events/create', [EventController::class, 'create']);
-Route::get('/events/{event}/edit', [EventController::class, 'edit']);
-Route::post('/events/store', [EventController::class, 'store']);
-Route::put('/events/update/{event}', [EventController::class, 'update']);
-Route::delete('/events/delete/{event}', [EventController::class, 'destroy']);
+Route::get('/events', [EventController::class, 'index'])                        ->name('event.index'); /// listar eventos
 
-Route::get('/events/{event}', [EventController::class, 'show']);
+Route::get('/events/create', [EventController::class, 'create'])                ->name('event.create'); /// form crear evento
+Route::post('/events/store', [EventController::class, 'store'])                 ->name('event.store'); /// metodo guardar
+
+Route::get('/events/{event}/edit', [EventController::class, 'edit'])            ->name('event.edit'); /// form editar evento
+Route::put('/events/update/{event}', [EventController::class, 'update'])        ->name('event.update'); /// metodo actualizar
+
+Route::delete('/events/delete/{event}', [EventController::class, 'destroy'])    ->name('event.destroy'); /// metodo destruir
+
+Route::get('/events/{event}', [EventController::class, 'show'])                 ->name('event.show'); /// panalla de vista
+
+Route::resource('team', TeamController::class)->names('team');
 
 
 
@@ -24,6 +30,10 @@ Route::get('/events/{event}', [EventController::class, 'show']);
 // post-patch (actualizar)
 // post-delete (eliminar)
 // popo (editado por baxter)
+
+// git add.
+// git commit -m "Mensaje de cambio"
+// git push
 
 
 Route::get('/prueba', function(){
