@@ -21,8 +21,9 @@ class EventController extends Controller
         $event = new Event();
 
         $event->title       = $request->title ;
-        $event->slug       = $request->slug ;
+        $event->slug        = $request->slug ;
         $event->description = $request->description ;
+        $event->date        = $request->date ;
 
         // return $event;
         $event->save();
@@ -38,8 +39,9 @@ class EventController extends Controller
         // $event = Event::find ($event);
 
         $event->title       = $request->title;
-        $event->slug       = $request->slug;
+        $event->slug        = $request->slug;
         $event->description = $request->description;
+        $event->date        = $request->date;
 
         $event->save();
         

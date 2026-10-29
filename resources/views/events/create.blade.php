@@ -21,6 +21,11 @@
 
                <label for="description">Descripcion</label>
                <textarea name="description" id="description" cols="30" rows="10">{{ $event->description }}</textarea>
+
+               <br>
+
+               <label for="date">fecha</label>
+               <input type="date" name="date" id="date" value="{{ $event->date }}">
      @else
           {{-- <form action="/events/store" method="POST"> --}}
           <form action="{{ route('event.store') }}" method="POST">
@@ -39,6 +44,11 @@
 
                <label for="description">Descripcion</label>
                <textarea name="description" id="description" cols="30" rows="10"></textarea>
+               
+               <br>
+               
+               <label for="date">fecha</label>
+               <input type="text" name="date" id="date">
      @endisset
      
           <br>

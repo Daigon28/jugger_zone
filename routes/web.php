@@ -6,7 +6,8 @@ use App\Http\Controllers\EventController;
 use App\Http\Controllers\TeamController;
 use App\Models\Event;
 
-Route::get('/', HomeController::class);
+Route::get('/', HomeController::class)                                          ->name('home'); /// Landing page
+
 
 Route::get('/events', [EventController::class, 'index'])                        ->name('event.index'); /// listar eventos
 

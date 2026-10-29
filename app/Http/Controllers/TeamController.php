@@ -28,7 +28,7 @@ class TeamController extends Controller
         // return $team;
         $team->save();
 
-        return redirect()->route('event.index');
+        return redirect()->route('team.index');
     }
 
     public function edit($team){ // editar teamo
@@ -45,13 +45,13 @@ class TeamController extends Controller
 
         $team->save();
         
-        return redirect()->route('event.index');
+        return redirect()->route('team.index');
     }
     
     public function destroy($team){ // update info7 teamo
         $team = team::find($team);
         $team->delete();
-        return redirect()->route('event.index');
+        return redirect()->route('team.index');
     }
 
     public function show(Team $team){ // mostrar teamo
