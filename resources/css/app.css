@@ -60,7 +60,7 @@
     border-radius: 1rem; /* rounded-2xl */
     border: 1px solid white;
     padding: 2rem;       /* p-4 */
-    min-height: 20rem;
+    /* min-height: 20rem; */
 
     display: flex;
     flex-direction: column;

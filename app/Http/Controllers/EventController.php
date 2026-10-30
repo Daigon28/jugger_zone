@@ -19,15 +19,29 @@ class EventController extends Controller
         return view('events.create');
     }
     public function store(Request $request){ // guardar evento
-        $event = new Event();
 
-        $event->title       = $request->title ;
-        $event->slug        = $request->slug ;
-        $event->description = $request->description ;
-        $event->location    = $request->location ;
-        $event->start_time  = $request->start_time ;
-        $event->end_time    = $request->end_time ;
-        $event->date        = $request->date ;
+        $request->validate([
+            'title' => 'required',
+            'slug' => 'required',
+            'description' => 'required',
+            'location' => 'required',
+            'start_time' => 'required',
+            'end_time' => 'required',
+            'date' => 'required'
+        ]);
+
+        
+
+        $event = new Event();
+        Event::create($request->all());
+
+        // $event->title       = $request->title ;
+        // $event->slug        = $request->slug ;
+        // $event->description = $request->description ;
+        // $event->location    = $request->location ;
+        // $event->start_time  = $request->start_time ;
+        // $event->end_time    = $request->end_time ;
+        // $event->date        = $request->date ;
 
         // return $event;
         $event->save();
@@ -42,13 +56,15 @@ class EventController extends Controller
     public function update(Event $event, Request $request){ // update info7 evento
         // $event = Event::find ($event);
 
-        $event->title       = $request->title;
-        $event->slug        = $request->slug;
-        $event->description = $request->description;
-        $event->location    = $request->location ;
-        $event->start_time  = $request->start_time ;
-        $event->end_time    = $request->end_time ;
-        $event->date        = $request->date;
+        Event::create($request->all());
+
+        // $event->title       = $request->title;
+        // $event->slug        = $request->slug;
+        // $event->description = $request->description;
+        // $event->location    = $request->location ;
+        // $event->start_time  = $request->start_time ;
+        // $event->end_time    = $request->end_time ;
+        // $event->date        = $request->date;
 
         // dd($event);
         // exit;

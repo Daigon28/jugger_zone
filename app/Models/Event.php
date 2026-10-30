@@ -8,6 +8,18 @@ use Override;
 
 class Event extends Model
 {
+    // protected $fillable = [
+    //     'title',
+    //     'slug',
+    //     'description',
+    //     'location ',
+    //     'start_time ',
+    //     'end_time ',
+    //     'date'
+    // ];
+    protected $guarded = [
+
+    ];
     
     protected function casts(): array
     {
@@ -19,17 +31,17 @@ class Event extends Model
     }
 
     // protected $table = "events"; 
-    protected function title() : Attribute
-    {
-        return Attribute::make(
-            set: function($value){ // setter
-                return strtolower($value);
-            },
-            get: function($value){ /// getter
-                return ucfirst($value);
-            }
-        );
-    }
+    // protected function title() : Attribute
+    // {
+    //     return Attribute::make(
+    //         set: function($value){ // setter
+    //             return strtolower($value);
+    //         },
+    //         get: function($value){ /// getter
+    //             return ucfirst($value);
+    //         }
+    //     );
+    // }
 
     public function getRouteKeyName(){
         return "slug";
