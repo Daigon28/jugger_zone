@@ -8,9 +8,11 @@
     <br>
     <br>
 
-    Mirando evento: {{ $event->title }}
-    <p> {{ $event->description }} </p>
-    <p>fecha: {{ $event->created_at->format('d/m/Y') }}</p>
-    <p>actualizado: {{ $event->updated_at->format('d/m/Y') }}</p>
+    <p>Mirando evento: {{ $event->title }} </p>
+    <p>Descripcion {{ $event->description }} </p>
+    <p>Ubicacion {{ $event->location }} </p>
+    <p>Hora de inicio {{ $event->start_time }} </p>
+    <p>Hora de finalizacion {{ $event->end_time }} </p>
+    <p>Fecha: {{ $event->date->format('d/m/Y') }}</p>
  
 </x-base>

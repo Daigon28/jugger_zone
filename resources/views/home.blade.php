@@ -38,17 +38,27 @@
         {{-- <div class="p-4"> --}}
             <div class="jz-card-list bg-[#3CD7B870] col-span-2">
                 <div class="inline-flex mb-4"> 
-                    <i data-lucide="calendar"></i> <div class="text-white ml-4 poppins font-bold font-4"> Entrena con nosotros. </div> <a href="" class="text-[#3CD7B8] pl-4 pt-1 text-xs"> ver todos </a>
+                    <i data-lucide="calendar" stroke-width="2.5"></i> <div class="text-white ml-4 poppins font-bold"> Entrena con nosotros. </div> <a href="" class="text-[#3CD7B8] pl-4 pt-1 text-xs"> ver todos </a>
                 </div>
                 
                 @foreach ($events as $event)
-                    <div class="grid grid-cols-5 gap-2">
-                        <div class="rounded border border-white p-2"> hola </div>
-                        <a href="{{ route('event.show', $event) }}" class="col-span-4"> 
-                            {{ $event->title }}
-                        </a>
-                    </div>  
-                    <hr class="m-4">
+                    <div class="grid grid-cols-5 gap-2 ">
+                        <div class="col-span-1 rounded-xl border border-white p-2 bg-[#3CD7B870] flex flex-col items-center justify-center text-center h-13 w-13">
+                            @foreach ( Str::of($event->date)->explode(' ') as $part)
+                                <p class="font-bold text-sm"> {{ $part }} </p>
+                            @endforeach
+                        </div>
+
+                        <div class="flex flex-col col-span-4">
+                            <a href="{{ route('event.show', $event) }}"> 
+                                {{ $event->title }}
+                            </a>
+                            <div class="text-[#3CD7B87D]/56 font-500">
+                                {{ $event->location }}, {{ $event->start_time }}
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="m-4 text-[#3CD7B87D]">
                 @endforeach
                 
             </div>

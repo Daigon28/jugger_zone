@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Event;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class EventController extends Controller
@@ -23,6 +24,9 @@ class EventController extends Controller
         $event->title       = $request->title ;
         $event->slug        = $request->slug ;
         $event->description = $request->description ;
+        $event->location    = $request->location ;
+        $event->start_time  = $request->start_time ;
+        $event->end_time    = $request->end_time ;
         $event->date        = $request->date ;
 
         // return $event;
@@ -41,8 +45,13 @@ class EventController extends Controller
         $event->title       = $request->title;
         $event->slug        = $request->slug;
         $event->description = $request->description;
+        $event->location    = $request->location ;
+        $event->start_time  = $request->start_time ;
+        $event->end_time    = $request->end_time ;
         $event->date        = $request->date;
 
+        // dd($event);
+        // exit;
         $event->save();
         
         return redirect()->route('event.index');
